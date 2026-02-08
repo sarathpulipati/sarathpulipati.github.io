@@ -154,7 +154,7 @@
 
 
   <!-- SKILLS SECTION -->
-<div id="skills" style="padding:120px 20px; text-align:center;">
+<div id="skills" class="fade-in" style="padding:120px 20px; text-align:center;">
 
   <!-- HEADER -->
   <h2 style="font-size:32px; letter-spacing:1px; margin-bottom:10px;">Skills</h2>
@@ -224,7 +224,7 @@
 
 
 <!-- PROJECTS SECTION -->
-<div id="projects" style="padding:120px 20px; text-align:center;">
+<div id="projects" class="fade-in" style="padding:120px 20px; text-align:center;">
 
   <!-- HEADER -->
   <h2 style="font-size:32px; letter-spacing:1px; margin-bottom:10px;">Projects</h2>
@@ -344,7 +344,7 @@
 
 
 <!-- CERTIFICATIONS SECTION -->
-<div id="certifications" style="padding:120px 20px; text-align:center;">
+<div id="certifications" class="fade-in" style="padding:120px 20px; text-align:center;">
 
   <!-- HEADER -->
   <h2 style="font-size:32px; letter-spacing:1px; margin-bottom:10px;">
@@ -392,7 +392,7 @@
 </div>
 
 <!-- EXPERIENCE SECTION -->
-<div id="experience" style="padding:120px 20px; text-align:center;">
+<div id="experience" class="fade-in" style="padding:120px 20px; text-align:center;">
 
   <!-- HEADER -->
   <h2 style="font-size:32px; letter-spacing:1px; margin-bottom:10px;">
@@ -431,7 +431,7 @@
 
   
 <!-- RESUME SECTION -->
-  <div id="resume" style="padding:120px 20px; text-align:center;">
+  <div id="resume" class="fade-in" style="padding:120px 20px; text-align:center;">
 
     <h2 style="font-size:32px; letter-spacing:1px; margin-bottom:10px;">Resume</h2>
    <div style="width:80px; height:3px; background:#22d3ee; margin:0 auto 40px auto;"></div>
@@ -458,7 +458,20 @@
 
   </div>
 
-  
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll(".fade-in").forEach(el => {
+    observer.observe(el);
+  });
+</script>
+
 
   
 </body>
